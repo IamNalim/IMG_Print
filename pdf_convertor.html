@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css" media="print">
+    @page 
+    {
+        size: auto;  
+        margin: 0mm; 
+    }
+</style>
+</head>
+<body>
+
+  <h2 id="titulek" style="display:none"></h2>
+  <div id="img">
+  </div>
+  <br>
+
+  <form id="form1">
+    <input type="text" id="nazev" value="Ukol"><br>
+    <input type="text" id="image" value="image.png"><br>
+  </form>
+    <button onclick="Vytisknout()" id="btn1">Vytisknout</button>
+
+  <script type="text/javascript">
+
+    function Vytisknout() {
+      // nastavime promenne
+      var nazev = document.getElementById("nazev");
+      var image = document.getElementById("image");
+      var imgElement = "<img src='" + image.value + "'/>";
+      document.getElementById("img").innerHTML = imgElement;
+
+      // skryjeme formular
+      document.getElementById("form1").style.display = "none";
+      document.getElementById("btn1").style.display = "none";
+
+      //nacteme co se ma dat do PDFka
+      document.getElementById("titulek").style.display = "block";
+      document.getElementById("titulek").innerHTML = nazev.value;
+      //document.getElementById("img").innerHTML = imgElement;
+      stateChange()
+    }
+    
+    function stateChange(newState) {
+      setTimeout(function () {
+        print();
+      }, 500);
+    }
+  </script>
+
+
+</body>
+</html>
