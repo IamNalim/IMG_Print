@@ -8,3 +8,6 @@ INPUT:
 -Image name (with .jpg .png..) 
 OUTPUT:
 -print into PDF,.. and so on
+
+NOTE!:
+  -its made for my personal using, a lot of bugs are not covered! 
